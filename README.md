@@ -1,6 +1,9 @@
 # EnderStrain
 A cheap strain gauge based bed probe for the Creality Ender 3 3D printer
 
+![IMG_3F9C0F934015-1](https://user-images.githubusercontent.com/56499108/235052801-d1b135bb-d127-4a5b-8989-c805d343449f.jpeg)
+
+
 ## Goals
 Support stock Ender 3 (or similar machines)  
 Use the nozzle touching the bed as the probing mechanism  
