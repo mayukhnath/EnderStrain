@@ -11,5 +11,15 @@ A PCB is used in place the X carriage. In addition to acting as the X carriage, 
 The PCB houses a strain gauge, which will flex when a force acts on the nozzle.
 There is an ADC present to monitor the strain guage and a microcontroller to read the ADC and generate a digital signal.
 
+### ADC
+Current: HX711, a 24 bit ADC with a sample rate of 80 Hz  
+Rev 2: HX717, similar to HX711, but can sample at 320 Hz.
+
+### Microcontroller
+STM32F030C8T6: a 48 MHz, 32-bit ARM Cortex M0 microcontroller.
+
+### Strain Guage
+BF350, more specifically 4 of them in a wheatstone bridge. Currently only using two in a half bridge seems to work, but using 4 may provide better sensitivity (and there a better signal to noise ratio).
+
 ## Software
-A simple C script reads the ADC as fast as possible, performs some signal processing and generates a digital output that indicates the probe is "triggered" when there is suficient force acting on the nozzle.
+A C program reads the ADC as fast as possible, performs some signal processing and generates a digital output that indicates the probe is "triggered" when there is suficient force acting on the nozzle.
