@@ -2,9 +2,9 @@
 A cheap strain gauge based bed probe for the Creality Ender 3 3D printer
 
 ## Goals
-Support stock Ender 3 (or similar machines)
-Use the nozzle touching the bed as the probing mechanism
-Cost less than $10 per probe
+Support stock Ender 3 (or similar machines)  
+Use the nozzle touching the bed as the probing mechanism  
+Cost less than $10 per probe  
 
 ## Hardware
 A PCB is used in place the X carriage. In addition to acting as the X carriage, it houses the probing mechanim and electronics.
