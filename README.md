@@ -24,10 +24,10 @@ BF350, more specifically 4 of them in a wheatstone bridge. Currently only using 
 ## Software
 A C program reads the ADC as fast as possible, performs some signal processing and generates a digital output that indicates the probe is "triggered" when there is suficient force acting on the nozzle.
 
-### HX711 Interface
+#### HX711 Interface
 The HX711 acts similar to a shift register. As there is no dedicated peripheral for this, the STM32 currently bangs the signal.
 
-### Moving Average
+#### Moving Average
 As the sensor and electronics are right next the nozzle, temperature drift is an issue. Therefore, using a simlple static trheshold does not work, as simply heating up the nozzle can cause the signal so slowly cross the threshol and cause a false positive. Using a higher threshold means the nozzle has to push harder against the bed (and reduced accuracy).  
 THere are many ways to address this, currently there is a simple moving average filter that accounts for slow drifts in the signal. therefore only a sudden increase in force (e.g. the nozzle hitting the bed) will cause a trigger. More testing is required.
 
