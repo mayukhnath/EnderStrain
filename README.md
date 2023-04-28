@@ -19,7 +19,15 @@ Rev 2: HX717, similar to HX711, but can sample at 320 Hz.
 STM32F030C8T6: a 48 MHz, 32-bit ARM Cortex M0 microcontroller.
 
 #### Strain Guage
-BF350, more specifically 4 of them in a wheatstone bridge. Currently only using two in a half bridge seems to work, but using 4 may provide better sensitivity (and there a better signal to noise ratio).
+BF350, more specifically 4 of them in a wheatstone bridge. Currently only using two in a half bridge seems to work, but using 4 may provide better sensitivity (and therefore a better signal to noise ratio).
 
 ## Software
 A C program reads the ADC as fast as possible, performs some signal processing and generates a digital output that indicates the probe is "triggered" when there is suficient force acting on the nozzle.
+
+### HX711 Interface
+The HX711 acts similar to a shift register. As there is no dedicated peripheral for this, the STM32 currently bangs the signal.
+
+### Moving Average
+As the sensor and electronics are right next the nozzle, temperature drift is an issue. Therefore, using a simlple static trheshold does not work, as simply heating up the nozzle can cause the signal so slowly cross the threshol and cause a false positive. Using a higher threshold means the nozzle has to push harder against the bed (and reduced accuracy).  
+THere are many ways to address this, currently there is a simple moving average filter that accounts for slow drifts in the signal. therefore only a sudden increase in force (e.g. the nozzle hitting the bed) will cause a trigger. More testing is required.
+
