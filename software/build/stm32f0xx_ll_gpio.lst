@@ -1,0 +1,314 @@
+ARM GAS  /tmp/ccNAlSmr.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32f0xx_ll_gpio.c"
+  14              		.text
+  15              		.section	.text.LL_GPIO_DeInit,"ax",%progbits
+  16              		.align	1
+  17              		.p2align 2,,3
+  18              		.global	LL_GPIO_DeInit
+  19              		.syntax unified
+  20              		.code	16
+  21              		.thumb_func
+  23              	LL_GPIO_DeInit:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 9022     		movs	r2, #144
+  28 0002 0300     		movs	r3, r0
+  29 0004 D205     		lsls	r2, r2, #23
+  30 0006 9042     		cmp	r0, r2
+  31 0008 24D0     		beq	.L9
+  32 000a 244A     		ldr	r2, .L13
+  33 000c 9042     		cmp	r0, r2
+  34 000e 15D0     		beq	.L10
+  35 0010 234A     		ldr	r2, .L13+4
+  36 0012 9042     		cmp	r0, r2
+  37 0014 2AD0     		beq	.L11
+  38 0016 234A     		ldr	r2, .L13+8
+  39 0018 9042     		cmp	r0, r2
+  40 001a 33D0     		beq	.L12
+  41 001c 224A     		ldr	r2, .L13+12
+  42 001e 0120     		movs	r0, #1
+  43 0020 9342     		cmp	r3, r2
+  44 0022 16D1     		bne	.L3
+  45 0024 8022     		movs	r2, #128
+  46 0026 214B     		ldr	r3, .L13+16
+  47 0028 D203     		lsls	r2, r2, #15
+  48 002a 996A     		ldr	r1, [r3, #40]
+  49 002c 0020     		movs	r0, #0
+  50 002e 0A43     		orrs	r2, r1
+  51 0030 9A62     		str	r2, [r3, #40]
+  52 0032 9A6A     		ldr	r2, [r3, #40]
+  53 0034 1E49     		ldr	r1, .L13+20
+  54 0036 0A40     		ands	r2, r1
+  55 0038 9A62     		str	r2, [r3, #40]
+  56 003a 0AE0     		b	.L3
+  57              	.L10:
+  58 003c 8022     		movs	r2, #128
+ARM GAS  /tmp/ccNAlSmr.s 			page 2
+
+
+  59 003e 0020     		movs	r0, #0
+  60 0040 1A4B     		ldr	r3, .L13+16
+  61 0042 D202     		lsls	r2, r2, #11
+  62 0044 996A     		ldr	r1, [r3, #40]
+  63 0046 0A43     		orrs	r2, r1
+  64 0048 9A62     		str	r2, [r3, #40]
+  65 004a 9A6A     		ldr	r2, [r3, #40]
+  66 004c 1949     		ldr	r1, .L13+24
+  67 004e 0A40     		ands	r2, r1
+  68 0050 9A62     		str	r2, [r3, #40]
+  69              	.L3:
+  70              		@ sp needed
+  71 0052 7047     		bx	lr
+  72              	.L9:
+  73 0054 8022     		movs	r2, #128
+  74 0056 154B     		ldr	r3, .L13+16
+  75 0058 9202     		lsls	r2, r2, #10
+  76 005a 996A     		ldr	r1, [r3, #40]
+  77 005c 0020     		movs	r0, #0
+  78 005e 0A43     		orrs	r2, r1
+  79 0060 9A62     		str	r2, [r3, #40]
+  80 0062 9A6A     		ldr	r2, [r3, #40]
+  81 0064 1449     		ldr	r1, .L13+28
+  82 0066 0A40     		ands	r2, r1
+  83 0068 9A62     		str	r2, [r3, #40]
+  84 006a F2E7     		b	.L3
+  85              	.L11:
+  86 006c 8022     		movs	r2, #128
+  87 006e 0F4B     		ldr	r3, .L13+16
+  88 0070 1203     		lsls	r2, r2, #12
+  89 0072 996A     		ldr	r1, [r3, #40]
+  90 0074 0020     		movs	r0, #0
+  91 0076 0A43     		orrs	r2, r1
+  92 0078 9A62     		str	r2, [r3, #40]
+  93 007a 9A6A     		ldr	r2, [r3, #40]
+  94 007c 0F49     		ldr	r1, .L13+32
+  95 007e 0A40     		ands	r2, r1
+  96 0080 9A62     		str	r2, [r3, #40]
+  97 0082 E6E7     		b	.L3
+  98              	.L12:
+  99 0084 8022     		movs	r2, #128
+ 100 0086 094B     		ldr	r3, .L13+16
+ 101 0088 5203     		lsls	r2, r2, #13
+ 102 008a 996A     		ldr	r1, [r3, #40]
+ 103 008c 0020     		movs	r0, #0
+ 104 008e 0A43     		orrs	r2, r1
+ 105 0090 9A62     		str	r2, [r3, #40]
+ 106 0092 9A6A     		ldr	r2, [r3, #40]
+ 107 0094 0A49     		ldr	r1, .L13+36
+ 108 0096 0A40     		ands	r2, r1
+ 109 0098 9A62     		str	r2, [r3, #40]
+ 110 009a DAE7     		b	.L3
+ 111              	.L14:
+ 112              		.align	2
+ 113              	.L13:
+ 114 009c 00040048 		.word	1207960576
+ 115 00a0 00080048 		.word	1207961600
+ARM GAS  /tmp/ccNAlSmr.s 			page 3
+
+
+ 116 00a4 000C0048 		.word	1207962624
+ 117 00a8 00140048 		.word	1207964672
+ 118 00ac 00100240 		.word	1073876992
+ 119 00b0 FFFFBFFF 		.word	-4194305
+ 120 00b4 FFFFFBFF 		.word	-262145
+ 121 00b8 FFFFFDFF 		.word	-131073
+ 122 00bc FFFFF7FF 		.word	-524289
+ 123 00c0 FFFFEFFF 		.word	-1048577
+ 125              		.section	.text.LL_GPIO_Init,"ax",%progbits
+ 126              		.align	1
+ 127              		.p2align 2,,3
+ 128              		.global	LL_GPIO_Init
+ 129              		.syntax unified
+ 130              		.code	16
+ 131              		.thumb_func
+ 133              	LL_GPIO_Init:
+ 134              		@ args = 0, pretend = 0, frame = 0
+ 135              		@ frame_needed = 0, uses_anonymous_args = 0
+ 136 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 137 0002 0C68     		ldr	r4, [r1]
+ 138 0004 DE46     		mov	lr, fp
+ 139 0006 5746     		mov	r7, r10
+ 140 0008 4E46     		mov	r6, r9
+ 141 000a 4546     		mov	r5, r8
+ 142 000c E243     		mvns	r2, r4
+ 143 000e 0023     		movs	r3, #0
+ 144 0010 9346     		mov	fp, r2
+ 145 0012 E0B5     		push	{r5, r6, r7, lr}
+ 146 0014 002C     		cmp	r4, #0
+ 147 0016 1AD1     		bne	.L16
+ 148 0018 55E0     		b	.L28
+ 149              	.L18:
+ 150 001a C268     		ldr	r2, [r0, #12]
+ 151 001c 9246     		mov	r10, r2
+ 152 001e 2A00     		movs	r2, r5
+ 153 0020 6A43     		muls	r2, r5
+ 154 0022 5700     		lsls	r7, r2, #1
+ 155 0024 BF18     		adds	r7, r7, r2
+ 156 0026 FD43     		mvns	r5, r7
+ 157 0028 5646     		mov	r6, r10
+ 158 002a A846     		mov	r8, r5
+ 159 002c 0D69     		ldr	r5, [r1, #16]
+ 160 002e BE43     		bics	r6, r7
+ 161 0030 5543     		muls	r5, r2
+ 162 0032 3543     		orrs	r5, r6
+ 163 0034 C560     		str	r5, [r0, #12]
+ 164              	.L19:
+ 165 0036 4746     		mov	r7, r8
+ 166 0038 0568     		ldr	r5, [r0]
+ 167 003a 2F40     		ands	r7, r5
+ 168 003c 3D00     		movs	r5, r7
+ 169 003e 6746     		mov	r7, ip
+ 170 0040 7A43     		muls	r2, r7
+ 171 0042 2A43     		orrs	r2, r5
+ 172 0044 0260     		str	r2, [r0]
+ 173              	.L17:
+ 174 0046 2200     		movs	r2, r4
+ARM GAS  /tmp/ccNAlSmr.s 			page 4
+
+
+ 175 0048 0133     		adds	r3, r3, #1
+ 176 004a DA40     		lsrs	r2, r2, r3
+ 177 004c 3BD0     		beq	.L28
+ 178              	.L16:
+ 179 004e 0122     		movs	r2, #1
+ 180 0050 2500     		movs	r5, r4
+ 181 0052 9A40     		lsls	r2, r2, r3
+ 182 0054 1540     		ands	r5, r2
+ 183 0056 1442     		tst	r4, r2
+ 184 0058 F5D0     		beq	.L17
+ 185 005a 4A68     		ldr	r2, [r1, #4]
+ 186 005c 9446     		mov	ip, r2
+ 187 005e 013A     		subs	r2, r2, #1
+ 188 0060 012A     		cmp	r2, #1
+ 189 0062 DAD8     		bhi	.L18
+ 190 0064 2A00     		movs	r2, r5
+ 191 0066 6A43     		muls	r2, r5
+ 192 0068 5600     		lsls	r6, r2, #1
+ 193 006a B146     		mov	r9, r6
+ 194 006c 9144     		add	r9, r9, r2
+ 195 006e 4E46     		mov	r6, r9
+ 196 0070 F643     		mvns	r6, r6
+ 197 0072 B046     		mov	r8, r6
+ 198 0074 8E68     		ldr	r6, [r1, #8]
+ 199 0076 8768     		ldr	r7, [r0, #8]
+ 200 0078 5643     		muls	r6, r2
+ 201 007a B246     		mov	r10, r6
+ 202 007c 4E46     		mov	r6, r9
+ 203 007e B743     		bics	r7, r6
+ 204 0080 5646     		mov	r6, r10
+ 205 0082 3743     		orrs	r7, r6
+ 206 0084 5E46     		mov	r6, fp
+ 207 0086 8760     		str	r7, [r0, #8]
+ 208 0088 4768     		ldr	r7, [r0, #4]
+ 209 008a 3E40     		ands	r6, r7
+ 210 008c CF68     		ldr	r7, [r1, #12]
+ 211 008e 6743     		muls	r7, r4
+ 212 0090 3743     		orrs	r7, r6
+ 213 0092 0E69     		ldr	r6, [r1, #16]
+ 214 0094 4760     		str	r7, [r0, #4]
+ 215 0096 5643     		muls	r6, r2
+ 216 0098 B246     		mov	r10, r6
+ 217 009a 4E46     		mov	r6, r9
+ 218 009c C768     		ldr	r7, [r0, #12]
+ 219 009e B743     		bics	r7, r6
+ 220 00a0 5646     		mov	r6, r10
+ 221 00a2 3743     		orrs	r7, r6
+ 222 00a4 6646     		mov	r6, ip
+ 223 00a6 C760     		str	r7, [r0, #12]
+ 224 00a8 022E     		cmp	r6, #2
+ 225 00aa C4D1     		bne	.L19
+ 226 00ac FF2D     		cmp	r5, #255
+ 227 00ae 11D8     		bhi	.L20
+ 228 00b0 1700     		movs	r7, r2
+ 229 00b2 5743     		muls	r7, r2
+ 230 00b4 056A     		ldr	r5, [r0, #32]
+ 231 00b6 3E01     		lsls	r6, r7, #4
+ARM GAS  /tmp/ccNAlSmr.s 			page 5
+
+
+ 232 00b8 F61B     		subs	r6, r6, r7
+ 233 00ba B543     		bics	r5, r6
+ 234 00bc 4E69     		ldr	r6, [r1, #20]
+ 235 00be 7743     		muls	r7, r6
+ 236 00c0 3D43     		orrs	r5, r7
+ 237 00c2 0562     		str	r5, [r0, #32]
+ 238 00c4 B7E7     		b	.L19
+ 239              	.L28:
+ 240 00c6 0020     		movs	r0, #0
+ 241              		@ sp needed
+ 242 00c8 F0BC     		pop	{r4, r5, r6, r7}
+ 243 00ca BB46     		mov	fp, r7
+ 244 00cc B246     		mov	r10, r6
+ 245 00ce A946     		mov	r9, r5
+ 246 00d0 A046     		mov	r8, r4
+ 247 00d2 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 248              	.L20:
+ 249 00d4 2D0A     		lsrs	r5, r5, #8
+ 250 00d6 6D43     		muls	r5, r5
+ 251 00d8 6D43     		muls	r5, r5
+ 252 00da 476A     		ldr	r7, [r0, #36]
+ 253 00dc 2E01     		lsls	r6, r5, #4
+ 254 00de 761B     		subs	r6, r6, r5
+ 255 00e0 B743     		bics	r7, r6
+ 256 00e2 4E69     		ldr	r6, [r1, #20]
+ 257 00e4 7543     		muls	r5, r6
+ 258 00e6 3D43     		orrs	r5, r7
+ 259 00e8 4562     		str	r5, [r0, #36]
+ 260 00ea A4E7     		b	.L19
+ 262              		.section	.text.LL_GPIO_StructInit,"ax",%progbits
+ 263              		.align	1
+ 264              		.p2align 2,,3
+ 265              		.global	LL_GPIO_StructInit
+ 266              		.syntax unified
+ 267              		.code	16
+ 268              		.thumb_func
+ 270              	LL_GPIO_StructInit:
+ 271              		@ args = 0, pretend = 0, frame = 0
+ 272              		@ frame_needed = 0, uses_anonymous_args = 0
+ 273              		@ link register save eliminated.
+ 274 0000 044B     		ldr	r3, .L30
+ 275              		@ sp needed
+ 276 0002 0360     		str	r3, [r0]
+ 277 0004 0323     		movs	r3, #3
+ 278 0006 4360     		str	r3, [r0, #4]
+ 279 0008 0023     		movs	r3, #0
+ 280 000a 8360     		str	r3, [r0, #8]
+ 281 000c C360     		str	r3, [r0, #12]
+ 282 000e 0361     		str	r3, [r0, #16]
+ 283 0010 4361     		str	r3, [r0, #20]
+ 284 0012 7047     		bx	lr
+ 285              	.L31:
+ 286              		.align	2
+ 287              	.L30:
+ 288 0014 FFFF0000 		.word	65535
+ 290              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/ccNAlSmr.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f0xx_ll_gpio.c
+     /tmp/ccNAlSmr.s:16     .text.LL_GPIO_DeInit:0000000000000000 $t
+     /tmp/ccNAlSmr.s:23     .text.LL_GPIO_DeInit:0000000000000000 LL_GPIO_DeInit
+     /tmp/ccNAlSmr.s:114    .text.LL_GPIO_DeInit:000000000000009c $d
+     /tmp/ccNAlSmr.s:126    .text.LL_GPIO_Init:0000000000000000 $t
+     /tmp/ccNAlSmr.s:133    .text.LL_GPIO_Init:0000000000000000 LL_GPIO_Init
+     /tmp/ccNAlSmr.s:263    .text.LL_GPIO_StructInit:0000000000000000 $t
+     /tmp/ccNAlSmr.s:270    .text.LL_GPIO_StructInit:0000000000000000 LL_GPIO_StructInit
+     /tmp/ccNAlSmr.s:288    .text.LL_GPIO_StructInit:0000000000000014 $d
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,593 @@
+ARM GAS  /tmp/ccgBUS4A.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32f0xx_ll_rcc.c"
+  14              		.text
+  15              		.section	.text.LL_RCC_DeInit,"ax",%progbits
+  16              		.align	1
+  17              		.p2align 2,,3
+  18              		.global	LL_RCC_DeInit
+  19              		.syntax unified
+  20              		.code	16
+  21              		.thumb_func
+  23              	LL_RCC_DeInit:
+  24              		@ args = 0, pretend = 0, frame = 8
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 0121     		movs	r1, #1
+  28 0002 284A     		ldr	r2, .L10
+  29 0004 82B0     		sub	sp, sp, #8
+  30 0006 1368     		ldr	r3, [r2]
+  31 0008 0B43     		orrs	r3, r1
+  32 000a 1360     		str	r3, [r2]
+  33 000c 0131     		adds	r1, r1, #1
+  34              	.L2:
+  35 000e 1368     		ldr	r3, [r2]
+  36 0010 1942     		tst	r1, r3
+  37 0012 FCD0     		beq	.L2
+  38 0014 F821     		movs	r1, #248
+  39 0016 1368     		ldr	r3, [r2]
+  40 0018 8B43     		bics	r3, r1
+  41 001a 7839     		subs	r1, r1, #120
+  42 001c 0B43     		orrs	r3, r1
+  43 001e 1360     		str	r3, [r2]
+  44 0020 0123     		movs	r3, #1
+  45 0022 5B42     		rsbs	r3, r3, #0
+  46 0024 0193     		str	r3, [sp, #4]
+  47 0026 019B     		ldr	r3, [sp, #4]
+  48 0028 1F49     		ldr	r1, .L10+4
+  49 002a 0B40     		ands	r3, r1
+  50 002c 0C21     		movs	r1, #12
+  51 002e 0193     		str	r3, [sp, #4]
+  52 0030 019B     		ldr	r3, [sp, #4]
+  53 0032 5360     		str	r3, [r2, #4]
+  54 0034 1B4A     		ldr	r2, .L10
+  55              	.L3:
+  56 0036 5368     		ldr	r3, [r2, #4]
+  57 0038 1942     		tst	r1, r3
+  58 003a FCD1     		bne	.L3
+ARM GAS  /tmp/ccgBUS4A.s 			page 2
+
+
+  59 003c 1368     		ldr	r3, [r2]
+  60 003e 1B49     		ldr	r1, .L10+8
+  61 0040 0193     		str	r3, [sp, #4]
+  62 0042 019B     		ldr	r3, [sp, #4]
+  63 0044 0B40     		ands	r3, r1
+  64 0046 8021     		movs	r1, #128
+  65 0048 0193     		str	r3, [sp, #4]
+  66 004a 019B     		ldr	r3, [sp, #4]
+  67 004c 8904     		lsls	r1, r1, #18
+  68 004e 1360     		str	r3, [r2]
+  69 0050 144A     		ldr	r2, .L10
+  70              	.L4:
+  71 0052 1368     		ldr	r3, [r2]
+  72 0054 1800     		movs	r0, r3
+  73 0056 0840     		ands	r0, r1
+  74 0058 0B42     		tst	r3, r1
+  75 005a FAD1     		bne	.L4
+  76 005c 1368     		ldr	r3, [r2]
+  77 005e 1449     		ldr	r1, .L10+12
+  78 0060 0B40     		ands	r3, r1
+  79 0062 F821     		movs	r1, #248
+  80 0064 1360     		str	r3, [r2]
+  81 0066 5060     		str	r0, [r2, #4]
+  82 0068 536B     		ldr	r3, [r2, #52]
+  83 006a 8B43     		bics	r3, r1
+  84 006c 7839     		subs	r1, r1, #120
+  85 006e 0B43     		orrs	r3, r1
+  86 0070 5363     		str	r3, [r2, #52]
+  87 0072 536B     		ldr	r3, [r2, #52]
+  88 0074 7F39     		subs	r1, r1, #127
+  89 0076 8B43     		bics	r3, r1
+  90 0078 5363     		str	r3, [r2, #52]
+  91 007a 536B     		ldr	r3, [r2, #52]
+  92 007c 0331     		adds	r1, r1, #3
+  93 007e 8B43     		bics	r3, r1
+  94 0080 5363     		str	r3, [r2, #52]
+  95 0082 BF23     		movs	r3, #191
+  96 0084 1B04     		lsls	r3, r3, #16
+  97 0086 D062     		str	r0, [r2, #44]
+  98 0088 1063     		str	r0, [r2, #48]
+  99 008a 0193     		str	r3, [sp, #4]
+ 100 008c 019B     		ldr	r3, [sp, #4]
+ 101 008e 9360     		str	r3, [r2, #8]
+ 102 0090 8023     		movs	r3, #128
+ 103 0092 9060     		str	r0, [r2, #8]
+ 104 0094 0020     		movs	r0, #0
+ 105 0096 516A     		ldr	r1, [r2, #36]
+ 106 0098 5B04     		lsls	r3, r3, #17
+ 107 009a 0B43     		orrs	r3, r1
+ 108 009c 5362     		str	r3, [r2, #36]
+ 109 009e 02B0     		add	sp, sp, #8
+ 110              		@ sp needed
+ 111 00a0 7047     		bx	lr
+ 112              	.L11:
+ 113 00a2 C046     		.align	2
+ 114              	.L10:
+ 115 00a4 00100240 		.word	1073876992
+ARM GAS  /tmp/ccgBUS4A.s 			page 3
+
+
+ 116 00a8 0CF8FFF0 		.word	-251660276
+ 117 00ac FFFFF6FE 		.word	-17367041
+ 118 00b0 FFFFFBFF 		.word	-262145
+ 120              		.global	__aeabi_uidiv
+ 121              		.global	__aeabi_idiv
+ 122              		.section	.text.LL_RCC_GetSystemClocksFreq,"ax",%progbits
+ 123              		.align	1
+ 124              		.p2align 2,,3
+ 125              		.global	LL_RCC_GetSystemClocksFreq
+ 126              		.syntax unified
+ 127              		.code	16
+ 128              		.thumb_func
+ 130              	LL_RCC_GetSystemClocksFreq:
+ 131              		@ args = 0, pretend = 0, frame = 0
+ 132              		@ frame_needed = 0, uses_anonymous_args = 0
+ 133 0000 0C23     		movs	r3, #12
+ 134 0002 184A     		ldr	r2, .L18
+ 135 0004 70B5     		push	{r4, r5, r6, lr}
+ 136 0006 5168     		ldr	r1, [r2, #4]
+ 137 0008 0500     		movs	r5, r0
+ 138 000a 0B40     		ands	r3, r1
+ 139 000c 082B     		cmp	r3, #8
+ 140 000e 11D0     		beq	.L17
+ 141 0010 154B     		ldr	r3, .L18+4
+ 142              	.L13:
+ 143 0012 1449     		ldr	r1, .L18
+ 144 0014 2B60     		str	r3, [r5]
+ 145 0016 4A68     		ldr	r2, [r1, #4]
+ 146 0018 1448     		ldr	r0, .L18+8
+ 147 001a 1206     		lsls	r2, r2, #24
+ 148 001c 120F     		lsrs	r2, r2, #28
+ 149 001e 825C     		ldrb	r2, [r0, r2]
+ 150              		@ sp needed
+ 151 0020 D340     		lsrs	r3, r3, r2
+ 152 0022 6B60     		str	r3, [r5, #4]
+ 153 0024 4A68     		ldr	r2, [r1, #4]
+ 154 0026 1249     		ldr	r1, .L18+12
+ 155 0028 5205     		lsls	r2, r2, #21
+ 156 002a 520F     		lsrs	r2, r2, #29
+ 157 002c 8A5C     		ldrb	r2, [r1, r2]
+ 158 002e D340     		lsrs	r3, r3, r2
+ 159 0030 AB60     		str	r3, [r5, #8]
+ 160 0032 70BD     		pop	{r4, r5, r6, pc}
+ 161              	.L17:
+ 162 0034 8023     		movs	r3, #128
+ 163 0036 5068     		ldr	r0, [r2, #4]
+ 164 0038 5B02     		lsls	r3, r3, #9
+ 165 003a 1840     		ands	r0, r3
+ 166 003c 4342     		rsbs	r3, r0, #0
+ 167 003e 5841     		adcs	r0, r0, r3
+ 168 0040 0C4B     		ldr	r3, .L18+16
+ 169 0042 4042     		rsbs	r0, r0, #0
+ 170 0044 1840     		ands	r0, r3
+ 171 0046 084B     		ldr	r3, .L18+4
+ 172 0048 0F24     		movs	r4, #15
+ 173 004a 9C46     		mov	ip, r3
+ 174 004c D16A     		ldr	r1, [r2, #44]
+ARM GAS  /tmp/ccgBUS4A.s 			page 4
+
+
+ 175 004e 6044     		add	r0, r0, ip
+ 176 0050 2140     		ands	r1, r4
+ 177 0052 0131     		adds	r1, r1, #1
+ 178 0054 5668     		ldr	r6, [r2, #4]
+ 179 0056 FFF7FEFF 		bl	__aeabi_uidiv
+ 180 005a B30C     		lsrs	r3, r6, #18
+ 181 005c 2340     		ands	r3, r4
+ 182 005e 0233     		adds	r3, r3, #2
+ 183 0060 4343     		muls	r3, r0
+ 184 0062 D6E7     		b	.L13
+ 185              	.L19:
+ 186              		.align	2
+ 187              	.L18:
+ 188 0064 00100240 		.word	1073876992
+ 189 0068 00127A00 		.word	8000000
+ 190 006c 00000000 		.word	AHBPrescTable
+ 191 0070 00000000 		.word	APBPrescTable
+ 192 0074 00F7C2FF 		.word	-4000000
+ 194              		.section	.text.LL_RCC_GetUSARTClockFreq,"ax",%progbits
+ 195              		.align	1
+ 196              		.p2align 2,,3
+ 197              		.global	LL_RCC_GetUSARTClockFreq
+ 198              		.syntax unified
+ 199              		.code	16
+ 200              		.thumb_func
+ 202              	LL_RCC_GetUSARTClockFreq:
+ 203              		@ args = 0, pretend = 0, frame = 0
+ 204              		@ frame_needed = 0, uses_anonymous_args = 0
+ 205 0000 0300     		movs	r3, r0
+ 206 0002 70B5     		push	{r4, r5, r6, lr}
+ 207 0004 0020     		movs	r0, #0
+ 208 0006 002B     		cmp	r3, #0
+ 209 0008 33D1     		bne	.L20
+ 210 000a 314A     		ldr	r2, .L40
+ 211 000c 0333     		adds	r3, r3, #3
+ 212 000e 116B     		ldr	r1, [r2, #48]
+ 213 0010 0B40     		ands	r3, r1
+ 214 0012 022B     		cmp	r3, #2
+ 215 0014 52D0     		beq	.L22
+ 216 0016 032B     		cmp	r3, #3
+ 217 0018 48D0     		beq	.L23
+ 218 001a 5168     		ldr	r1, [r2, #4]
+ 219 001c 012B     		cmp	r3, #1
+ 220 001e 29D0     		beq	.L39
+ 221 0020 0C23     		movs	r3, #12
+ 222 0022 0B40     		ands	r3, r1
+ 223 0024 082B     		cmp	r3, #8
+ 224 0026 51D1     		bne	.L31
+ 225 0028 8023     		movs	r3, #128
+ 226 002a 5068     		ldr	r0, [r2, #4]
+ 227 002c 5B02     		lsls	r3, r3, #9
+ 228 002e 1840     		ands	r0, r3
+ 229 0030 4342     		rsbs	r3, r0, #0
+ 230 0032 5841     		adcs	r0, r0, r3
+ 231 0034 274B     		ldr	r3, .L40+4
+ 232 0036 4042     		rsbs	r0, r0, #0
+ 233 0038 1840     		ands	r0, r3
+ARM GAS  /tmp/ccgBUS4A.s 			page 5
+
+
+ 234 003a 274B     		ldr	r3, .L40+8
+ 235 003c 0F24     		movs	r4, #15
+ 236 003e 9C46     		mov	ip, r3
+ 237 0040 D16A     		ldr	r1, [r2, #44]
+ 238 0042 6044     		add	r0, r0, ip
+ 239 0044 2140     		ands	r1, r4
+ 240 0046 0131     		adds	r1, r1, #1
+ 241 0048 5568     		ldr	r5, [r2, #4]
+ 242 004a FFF7FEFF 		bl	__aeabi_uidiv
+ 243 004e 0300     		movs	r3, r0
+ 244 0050 AD0C     		lsrs	r5, r5, #18
+ 245 0052 2C40     		ands	r4, r5
+ 246 0054 A01C     		adds	r0, r4, #2
+ 247 0056 5843     		muls	r0, r3
+ 248              	.L26:
+ 249 0058 1D4B     		ldr	r3, .L40
+ 250 005a 2049     		ldr	r1, .L40+12
+ 251 005c 5A68     		ldr	r2, [r3, #4]
+ 252 005e 5B68     		ldr	r3, [r3, #4]
+ 253 0060 1206     		lsls	r2, r2, #24
+ 254 0062 120F     		lsrs	r2, r2, #28
+ 255 0064 8A5C     		ldrb	r2, [r1, r2]
+ 256 0066 5B05     		lsls	r3, r3, #21
+ 257 0068 D040     		lsrs	r0, r0, r2
+ 258 006a 1D4A     		ldr	r2, .L40+16
+ 259 006c 5B0F     		lsrs	r3, r3, #29
+ 260 006e D35C     		ldrb	r3, [r2, r3]
+ 261 0070 D840     		lsrs	r0, r0, r3
+ 262              	.L20:
+ 263              		@ sp needed
+ 264 0072 70BD     		pop	{r4, r5, r6, pc}
+ 265              	.L39:
+ 266 0074 0B33     		adds	r3, r3, #11
+ 267 0076 0B40     		ands	r3, r1
+ 268 0078 082B     		cmp	r3, #8
+ 269 007a 1DD1     		bne	.L29
+ 270 007c 8023     		movs	r3, #128
+ 271 007e 5068     		ldr	r0, [r2, #4]
+ 272 0080 5B02     		lsls	r3, r3, #9
+ 273 0082 1840     		ands	r0, r3
+ 274 0084 4342     		rsbs	r3, r0, #0
+ 275 0086 5841     		adcs	r0, r0, r3
+ 276 0088 124B     		ldr	r3, .L40+4
+ 277 008a 4042     		rsbs	r0, r0, #0
+ 278 008c 1840     		ands	r0, r3
+ 279 008e 124B     		ldr	r3, .L40+8
+ 280 0090 0F24     		movs	r4, #15
+ 281 0092 9C46     		mov	ip, r3
+ 282 0094 D16A     		ldr	r1, [r2, #44]
+ 283 0096 6044     		add	r0, r0, ip
+ 284 0098 2140     		ands	r1, r4
+ 285 009a 0131     		adds	r1, r1, #1
+ 286 009c 5568     		ldr	r5, [r2, #4]
+ 287 009e FFF7FEFF 		bl	__aeabi_uidiv
+ 288 00a2 AD0C     		lsrs	r5, r5, #18
+ 289 00a4 2C40     		ands	r4, r5
+ 290 00a6 0234     		adds	r4, r4, #2
+ARM GAS  /tmp/ccgBUS4A.s 			page 6
+
+
+ 291 00a8 6043     		muls	r0, r4
+ 292 00aa E2E7     		b	.L20
+ 293              	.L23:
+ 294 00ac 1368     		ldr	r3, [r2]
+ 295 00ae 0222     		movs	r2, #2
+ 296 00b0 1000     		movs	r0, r2
+ 297 00b2 1840     		ands	r0, r3
+ 298 00b4 1A42     		tst	r2, r3
+ 299 00b6 DCD0     		beq	.L20
+ 300              	.L29:
+ 301 00b8 0748     		ldr	r0, .L40+8
+ 302 00ba DAE7     		b	.L20
+ 303              	.L22:
+ 304 00bc 1800     		movs	r0, r3
+ 305 00be 126A     		ldr	r2, [r2, #32]
+ 306 00c0 1040     		ands	r0, r2
+ 307 00c2 1342     		tst	r3, r2
+ 308 00c4 D5D0     		beq	.L20
+ 309 00c6 8020     		movs	r0, #128
+ 310 00c8 0002     		lsls	r0, r0, #8
+ 311 00ca D2E7     		b	.L20
+ 312              	.L31:
+ 313 00cc 0248     		ldr	r0, .L40+8
+ 314 00ce C3E7     		b	.L26
+ 315              	.L41:
+ 316              		.align	2
+ 317              	.L40:
+ 318 00d0 00100240 		.word	1073876992
+ 319 00d4 00F7C2FF 		.word	-4000000
+ 320 00d8 00127A00 		.word	8000000
+ 321 00dc 00000000 		.word	AHBPrescTable
+ 322 00e0 00000000 		.word	APBPrescTable
+ 324              		.section	.text.LL_RCC_GetI2CClockFreq,"ax",%progbits
+ 325              		.align	1
+ 326              		.p2align 2,,3
+ 327              		.global	LL_RCC_GetI2CClockFreq
+ 328              		.syntax unified
+ 329              		.code	16
+ 330              		.thumb_func
+ 332              	LL_RCC_GetI2CClockFreq:
+ 333              		@ args = 0, pretend = 0, frame = 0
+ 334              		@ frame_needed = 0, uses_anonymous_args = 0
+ 335 0000 0300     		movs	r3, r0
+ 336 0002 70B5     		push	{r4, r5, r6, lr}
+ 337 0004 0020     		movs	r0, #0
+ 338 0006 102B     		cmp	r3, #16
+ 339 0008 00D0     		beq	.L52
+ 340              	.L42:
+ 341              		@ sp needed
+ 342 000a 70BD     		pop	{r4, r5, r6, pc}
+ 343              	.L52:
+ 344 000c 144A     		ldr	r2, .L53
+ 345 000e 116B     		ldr	r1, [r2, #48]
+ 346 0010 0B42     		tst	r3, r1
+ 347 0012 1CD0     		beq	.L44
+ 348 0014 5168     		ldr	r1, [r2, #4]
+ 349 0016 043B     		subs	r3, r3, #4
+ARM GAS  /tmp/ccgBUS4A.s 			page 7
+
+
+ 350 0018 0B40     		ands	r3, r1
+ 351 001a 082B     		cmp	r3, #8
+ 352 001c 1DD1     		bne	.L47
+ 353 001e 8023     		movs	r3, #128
+ 354 0020 5068     		ldr	r0, [r2, #4]
+ 355 0022 5B02     		lsls	r3, r3, #9
+ 356 0024 1840     		ands	r0, r3
+ 357 0026 4342     		rsbs	r3, r0, #0
+ 358 0028 5841     		adcs	r0, r0, r3
+ 359 002a 0E4B     		ldr	r3, .L53+4
+ 360 002c 4042     		rsbs	r0, r0, #0
+ 361 002e 1840     		ands	r0, r3
+ 362 0030 0D4B     		ldr	r3, .L53+8
+ 363 0032 0F24     		movs	r4, #15
+ 364 0034 9C46     		mov	ip, r3
+ 365 0036 D16A     		ldr	r1, [r2, #44]
+ 366 0038 6044     		add	r0, r0, ip
+ 367 003a 2140     		ands	r1, r4
+ 368 003c 0131     		adds	r1, r1, #1
+ 369 003e 5568     		ldr	r5, [r2, #4]
+ 370 0040 FFF7FEFF 		bl	__aeabi_uidiv
+ 371 0044 AD0C     		lsrs	r5, r5, #18
+ 372 0046 2C40     		ands	r4, r5
+ 373 0048 0234     		adds	r4, r4, #2
+ 374 004a 6043     		muls	r0, r4
+ 375 004c DDE7     		b	.L42
+ 376              	.L44:
+ 377 004e 1368     		ldr	r3, [r2]
+ 378 0050 0222     		movs	r2, #2
+ 379 0052 1000     		movs	r0, r2
+ 380 0054 1840     		ands	r0, r3
+ 381 0056 1A42     		tst	r2, r3
+ 382 0058 D7D0     		beq	.L42
+ 383              	.L47:
+ 384 005a 0348     		ldr	r0, .L53+8
+ 385 005c D5E7     		b	.L42
+ 386              	.L54:
+ 387 005e C046     		.align	2
+ 388              	.L53:
+ 389 0060 00100240 		.word	1073876992
+ 390 0064 00F7C2FF 		.word	-4000000
+ 391 0068 00127A00 		.word	8000000
+ 393              		.section	.text.RCC_GetSystemClockFreq,"ax",%progbits
+ 394              		.align	1
+ 395              		.p2align 2,,3
+ 396              		.global	RCC_GetSystemClockFreq
+ 397              		.syntax unified
+ 398              		.code	16
+ 399              		.thumb_func
+ 401              	RCC_GetSystemClockFreq:
+ 402              		@ args = 0, pretend = 0, frame = 0
+ 403              		@ frame_needed = 0, uses_anonymous_args = 0
+ 404 0000 0C23     		movs	r3, #12
+ 405 0002 104A     		ldr	r2, .L61
+ 406 0004 70B5     		push	{r4, r5, r6, lr}
+ 407 0006 5168     		ldr	r1, [r2, #4]
+ 408 0008 0B40     		ands	r3, r1
+ARM GAS  /tmp/ccgBUS4A.s 			page 8
+
+
+ 409 000a 082B     		cmp	r3, #8
+ 410 000c 01D0     		beq	.L60
+ 411 000e 0E48     		ldr	r0, .L61+4
+ 412              	.L55:
+ 413              		@ sp needed
+ 414 0010 70BD     		pop	{r4, r5, r6, pc}
+ 415              	.L60:
+ 416 0012 8023     		movs	r3, #128
+ 417 0014 5068     		ldr	r0, [r2, #4]
+ 418 0016 5B02     		lsls	r3, r3, #9
+ 419 0018 1840     		ands	r0, r3
+ 420 001a 4342     		rsbs	r3, r0, #0
+ 421 001c 5841     		adcs	r0, r0, r3
+ 422 001e 0B4B     		ldr	r3, .L61+8
+ 423 0020 4042     		rsbs	r0, r0, #0
+ 424 0022 1840     		ands	r0, r3
+ 425 0024 084B     		ldr	r3, .L61+4
+ 426 0026 0F24     		movs	r4, #15
+ 427 0028 9C46     		mov	ip, r3
+ 428 002a D16A     		ldr	r1, [r2, #44]
+ 429 002c 6044     		add	r0, r0, ip
+ 430 002e 2140     		ands	r1, r4
+ 431 0030 0131     		adds	r1, r1, #1
+ 432 0032 5568     		ldr	r5, [r2, #4]
+ 433 0034 FFF7FEFF 		bl	__aeabi_uidiv
+ 434 0038 AD0C     		lsrs	r5, r5, #18
+ 435 003a 2C40     		ands	r4, r5
+ 436 003c 0234     		adds	r4, r4, #2
+ 437 003e 6043     		muls	r0, r4
+ 438 0040 E6E7     		b	.L55
+ 439              	.L62:
+ 440 0042 C046     		.align	2
+ 441              	.L61:
+ 442 0044 00100240 		.word	1073876992
+ 443 0048 00127A00 		.word	8000000
+ 444 004c 00F7C2FF 		.word	-4000000
+ 446              		.section	.text.RCC_GetHCLKClockFreq,"ax",%progbits
+ 447              		.align	1
+ 448              		.p2align 2,,3
+ 449              		.global	RCC_GetHCLKClockFreq
+ 450              		.syntax unified
+ 451              		.code	16
+ 452              		.thumb_func
+ 454              	RCC_GetHCLKClockFreq:
+ 455              		@ args = 0, pretend = 0, frame = 0
+ 456              		@ frame_needed = 0, uses_anonymous_args = 0
+ 457              		@ link register save eliminated.
+ 458 0000 034B     		ldr	r3, .L64
+ 459 0002 044A     		ldr	r2, .L64+4
+ 460 0004 5B68     		ldr	r3, [r3, #4]
+ 461              		@ sp needed
+ 462 0006 1B06     		lsls	r3, r3, #24
+ 463 0008 1B0F     		lsrs	r3, r3, #28
+ 464 000a D35C     		ldrb	r3, [r2, r3]
+ 465 000c D840     		lsrs	r0, r0, r3
+ 466 000e 7047     		bx	lr
+ 467              	.L65:
+ARM GAS  /tmp/ccgBUS4A.s 			page 9
+
+
+ 468              		.align	2
+ 469              	.L64:
+ 470 0010 00100240 		.word	1073876992
+ 471 0014 00000000 		.word	AHBPrescTable
+ 473              		.section	.text.RCC_GetPCLK1ClockFreq,"ax",%progbits
+ 474              		.align	1
+ 475              		.p2align 2,,3
+ 476              		.global	RCC_GetPCLK1ClockFreq
+ 477              		.syntax unified
+ 478              		.code	16
+ 479              		.thumb_func
+ 481              	RCC_GetPCLK1ClockFreq:
+ 482              		@ args = 0, pretend = 0, frame = 0
+ 483              		@ frame_needed = 0, uses_anonymous_args = 0
+ 484              		@ link register save eliminated.
+ 485 0000 034B     		ldr	r3, .L67
+ 486 0002 044A     		ldr	r2, .L67+4
+ 487 0004 5B68     		ldr	r3, [r3, #4]
+ 488              		@ sp needed
+ 489 0006 5B05     		lsls	r3, r3, #21
+ 490 0008 5B0F     		lsrs	r3, r3, #29
+ 491 000a D35C     		ldrb	r3, [r2, r3]
+ 492 000c D840     		lsrs	r0, r0, r3
+ 493 000e 7047     		bx	lr
+ 494              	.L68:
+ 495              		.align	2
+ 496              	.L67:
+ 497 0010 00100240 		.word	1073876992
+ 498 0014 00000000 		.word	APBPrescTable
+ 500              		.section	.text.RCC_PLL_GetFreqDomain_SYS,"ax",%progbits
+ 501              		.align	1
+ 502              		.p2align 2,,3
+ 503              		.global	RCC_PLL_GetFreqDomain_SYS
+ 504              		.syntax unified
+ 505              		.code	16
+ 506              		.thumb_func
+ 508              	RCC_PLL_GetFreqDomain_SYS:
+ 509              		@ args = 0, pretend = 0, frame = 0
+ 510              		@ frame_needed = 0, uses_anonymous_args = 0
+ 511 0000 8022     		movs	r2, #128
+ 512 0002 0C4B     		ldr	r3, .L72
+ 513 0004 5202     		lsls	r2, r2, #9
+ 514 0006 5868     		ldr	r0, [r3, #4]
+ 515 0008 70B5     		push	{r4, r5, r6, lr}
+ 516 000a 1040     		ands	r0, r2
+ 517 000c 4242     		rsbs	r2, r0, #0
+ 518 000e 5041     		adcs	r0, r0, r2
+ 519              		@ sp needed
+ 520 0010 094A     		ldr	r2, .L72+4
+ 521 0012 4042     		rsbs	r0, r0, #0
+ 522 0014 1040     		ands	r0, r2
+ 523 0016 094A     		ldr	r2, .L72+8
+ 524 0018 0F24     		movs	r4, #15
+ 525 001a 9446     		mov	ip, r2
+ 526 001c D96A     		ldr	r1, [r3, #44]
+ 527 001e 6044     		add	r0, r0, ip
+ 528 0020 2140     		ands	r1, r4
+ARM GAS  /tmp/ccgBUS4A.s 			page 10
+
+
+ 529 0022 0131     		adds	r1, r1, #1
+ 530 0024 5D68     		ldr	r5, [r3, #4]
+ 531 0026 FFF7FEFF 		bl	__aeabi_uidiv
+ 532 002a AD0C     		lsrs	r5, r5, #18
+ 533 002c 2C40     		ands	r4, r5
+ 534 002e 0234     		adds	r4, r4, #2
+ 535 0030 6043     		muls	r0, r4
+ 536 0032 70BD     		pop	{r4, r5, r6, pc}
+ 537              	.L73:
+ 538              		.align	2
+ 539              	.L72:
+ 540 0034 00100240 		.word	1073876992
+ 541 0038 00F7C2FF 		.word	-4000000
+ 542 003c 00127A00 		.word	8000000
+ 544              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/ccgBUS4A.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f0xx_ll_rcc.c
+     /tmp/ccgBUS4A.s:16     .text.LL_RCC_DeInit:0000000000000000 $t
+     /tmp/ccgBUS4A.s:23     .text.LL_RCC_DeInit:0000000000000000 LL_RCC_DeInit
+     /tmp/ccgBUS4A.s:115    .text.LL_RCC_DeInit:00000000000000a4 $d
+     /tmp/ccgBUS4A.s:123    .text.LL_RCC_GetSystemClocksFreq:0000000000000000 $t
+     /tmp/ccgBUS4A.s:130    .text.LL_RCC_GetSystemClocksFreq:0000000000000000 LL_RCC_GetSystemClocksFreq
+     /tmp/ccgBUS4A.s:188    .text.LL_RCC_GetSystemClocksFreq:0000000000000064 $d
+     /tmp/ccgBUS4A.s:195    .text.LL_RCC_GetUSARTClockFreq:0000000000000000 $t
+     /tmp/ccgBUS4A.s:202    .text.LL_RCC_GetUSARTClockFreq:0000000000000000 LL_RCC_GetUSARTClockFreq
+     /tmp/ccgBUS4A.s:318    .text.LL_RCC_GetUSARTClockFreq:00000000000000d0 $d
+     /tmp/ccgBUS4A.s:325    .text.LL_RCC_GetI2CClockFreq:0000000000000000 $t
+     /tmp/ccgBUS4A.s:332    .text.LL_RCC_GetI2CClockFreq:0000000000000000 LL_RCC_GetI2CClockFreq
+     /tmp/ccgBUS4A.s:389    .text.LL_RCC_GetI2CClockFreq:0000000000000060 $d
+     /tmp/ccgBUS4A.s:394    .text.RCC_GetSystemClockFreq:0000000000000000 $t
+     /tmp/ccgBUS4A.s:401    .text.RCC_GetSystemClockFreq:0000000000000000 RCC_GetSystemClockFreq
+     /tmp/ccgBUS4A.s:442    .text.RCC_GetSystemClockFreq:0000000000000044 $d
+     /tmp/ccgBUS4A.s:447    .text.RCC_GetHCLKClockFreq:0000000000000000 $t
+     /tmp/ccgBUS4A.s:454    .text.RCC_GetHCLKClockFreq:0000000000000000 RCC_GetHCLKClockFreq
+     /tmp/ccgBUS4A.s:470    .text.RCC_GetHCLKClockFreq:0000000000000010 $d
+     /tmp/ccgBUS4A.s:474    .text.RCC_GetPCLK1ClockFreq:0000000000000000 $t
+     /tmp/ccgBUS4A.s:481    .text.RCC_GetPCLK1ClockFreq:0000000000000000 RCC_GetPCLK1ClockFreq
+     /tmp/ccgBUS4A.s:497    .text.RCC_GetPCLK1ClockFreq:0000000000000010 $d
+     /tmp/ccgBUS4A.s:501    .text.RCC_PLL_GetFreqDomain_SYS:0000000000000000 $t
+     /tmp/ccgBUS4A.s:508    .text.RCC_PLL_GetFreqDomain_SYS:0000000000000000 RCC_PLL_GetFreqDomain_SYS
+     /tmp/ccgBUS4A.s:540    .text.RCC_PLL_GetFreqDomain_SYS:0000000000000034 $d
+
+UNDEFINED SYMBOLS
+__aeabi_uidiv
+__aeabi_idiv
+AHBPrescTable
+APBPrescTable

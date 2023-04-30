@@ -1,0 +1,57 @@
+ARM GAS  /tmp/ccH45YQ8.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32f0xx_ll_pwr.c"
+  14              		.text
+  15              		.section	.text.LL_PWR_DeInit,"ax",%progbits
+  16              		.align	1
+  17              		.p2align 2,,3
+  18              		.global	LL_PWR_DeInit
+  19              		.syntax unified
+  20              		.code	16
+  21              		.thumb_func
+  23              	LL_PWR_DeInit:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 8022     		movs	r2, #128
+  28              		@ sp needed
+  29 0002 054B     		ldr	r3, .L3
+  30 0004 5205     		lsls	r2, r2, #21
+  31 0006 1969     		ldr	r1, [r3, #16]
+  32 0008 0020     		movs	r0, #0
+  33 000a 0A43     		orrs	r2, r1
+  34 000c 1A61     		str	r2, [r3, #16]
+  35 000e 1A69     		ldr	r2, [r3, #16]
+  36 0010 0249     		ldr	r1, .L3+4
+  37 0012 0A40     		ands	r2, r1
+  38 0014 1A61     		str	r2, [r3, #16]
+  39 0016 7047     		bx	lr
+  40              	.L4:
+  41              		.align	2
+  42              	.L3:
+  43 0018 00100240 		.word	1073876992
+  44 001c FFFFFFEF 		.word	-268435457
+  46              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/ccH45YQ8.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f0xx_ll_pwr.c
+     /tmp/ccH45YQ8.s:16     .text.LL_PWR_DeInit:0000000000000000 $t
+     /tmp/ccH45YQ8.s:23     .text.LL_PWR_DeInit:0000000000000000 LL_PWR_DeInit
+     /tmp/ccH45YQ8.s:43     .text.LL_PWR_DeInit:0000000000000018 $d
+
+NO UNDEFINED SYMBOLS

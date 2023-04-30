@@ -1,0 +1,202 @@
+ARM GAS  /tmp/cc5AuP9k.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32f0xx_ll_exti.c"
+  14              		.text
+  15              		.section	.text.LL_EXTI_DeInit,"ax",%progbits
+  16              		.align	1
+  17              		.p2align 2,,3
+  18              		.global	LL_EXTI_DeInit
+  19              		.syntax unified
+  20              		.code	16
+  21              		.thumb_func
+  23              	LL_EXTI_DeInit:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 054B     		ldr	r3, .L3
+  28 0002 064A     		ldr	r2, .L3+4
+  29 0004 0020     		movs	r0, #0
+  30              		@ sp needed
+  31 0006 1A60     		str	r2, [r3]
+  32 0008 0022     		movs	r2, #0
+  33 000a 5A60     		str	r2, [r3, #4]
+  34 000c 9A60     		str	r2, [r3, #8]
+  35 000e DA60     		str	r2, [r3, #12]
+  36 0010 1A61     		str	r2, [r3, #16]
+  37 0012 034A     		ldr	r2, .L3+8
+  38 0014 5A61     		str	r2, [r3, #20]
+  39 0016 7047     		bx	lr
+  40              	.L4:
+  41              		.align	2
+  42              	.L3:
+  43 0018 00040140 		.word	1073808384
+  44 001c 0000940F 		.word	261357568
+  45 0020 FFFF7B00 		.word	8126463
+  47              		.section	.text.LL_EXTI_Init,"ax",%progbits
+  48              		.align	1
+  49              		.p2align 2,,3
+  50              		.global	LL_EXTI_Init
+  51              		.syntax unified
+  52              		.code	16
+  53              		.thumb_func
+  55              	LL_EXTI_Init:
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58              		@ link register save eliminated.
+  59 0000 0279     		ldrb	r2, [r0, #4]
+  60 0002 0300     		movs	r3, r0
+ARM GAS  /tmp/cc5AuP9k.s 			page 2
+
+
+  61 0004 002A     		cmp	r2, #0
+  62 0006 15D0     		beq	.L6
+  63 0008 0068     		ldr	r0, [r0]
+  64 000a 0028     		cmp	r0, #0
+  65 000c 11D0     		beq	.L5
+  66 000e 5A79     		ldrb	r2, [r3, #5]
+  67 0010 012A     		cmp	r2, #1
+  68 0012 37D0     		beq	.L8
+  69 0014 022A     		cmp	r2, #2
+  70 0016 29D0     		beq	.L9
+  71 0018 0121     		movs	r1, #1
+  72 001a 002A     		cmp	r2, #0
+  73 001c 1DD0     		beq	.L22
+  74              	.L10:
+  75 001e 9B79     		ldrb	r3, [r3, #6]
+  76 0020 002B     		cmp	r3, #0
+  77 0022 18D0     		beq	.L21
+  78              	.L24:
+  79 0024 022B     		cmp	r3, #2
+  80 0026 0FD0     		beq	.L11
+  81 0028 032B     		cmp	r3, #3
+  82 002a 38D0     		beq	.L12
+  83 002c 012B     		cmp	r3, #1
+  84 002e 2DD0     		beq	.L23
+  85 0030 0120     		movs	r0, #1
+  86              	.L5:
+  87              		@ sp needed
+  88 0032 7047     		bx	lr
+  89              	.L6:
+  90 0034 1C4A     		ldr	r2, .L25
+  91 0036 0068     		ldr	r0, [r0]
+  92 0038 1168     		ldr	r1, [r2]
+  93 003a 8143     		bics	r1, r0
+  94 003c 1160     		str	r1, [r2]
+  95 003e 5368     		ldr	r3, [r2, #4]
+  96 0040 8343     		bics	r3, r0
+  97 0042 5360     		str	r3, [r2, #4]
+  98 0044 0020     		movs	r0, #0
+  99 0046 F4E7     		b	.L5
+ 100              	.L11:
+ 101 0048 174B     		ldr	r3, .L25
+ 102 004a 9A68     		ldr	r2, [r3, #8]
+ 103 004c 8243     		bics	r2, r0
+ 104              	.L20:
+ 105 004e 9A60     		str	r2, [r3, #8]
+ 106 0050 DA68     		ldr	r2, [r3, #12]
+ 107 0052 1043     		orrs	r0, r2
+ 108 0054 D860     		str	r0, [r3, #12]
+ 109              	.L21:
+ 110 0056 0800     		movs	r0, r1
+ 111 0058 EBE7     		b	.L5
+ 112              	.L22:
+ 113 005a 134A     		ldr	r2, .L25
+ 114 005c 5168     		ldr	r1, [r2, #4]
+ 115 005e 8143     		bics	r1, r0
+ 116 0060 5160     		str	r1, [r2, #4]
+ 117 0062 1168     		ldr	r1, [r2]
+ARM GAS  /tmp/cc5AuP9k.s 			page 3
+
+
+ 118 0064 0143     		orrs	r1, r0
+ 119 0066 1160     		str	r1, [r2]
+ 120 0068 0021     		movs	r1, #0
+ 121 006a D8E7     		b	.L10
+ 122              	.L9:
+ 123 006c 0E4A     		ldr	r2, .L25
+ 124 006e 1168     		ldr	r1, [r2]
+ 125 0070 0143     		orrs	r1, r0
+ 126              	.L19:
+ 127 0072 1160     		str	r1, [r2]
+ 128 0074 5168     		ldr	r1, [r2, #4]
+ 129 0076 0143     		orrs	r1, r0
+ 130 0078 5160     		str	r1, [r2, #4]
+ 131 007a 9B79     		ldrb	r3, [r3, #6]
+ 132 007c 0021     		movs	r1, #0
+ 133 007e 002B     		cmp	r3, #0
+ 134 0080 E9D0     		beq	.L21
+ 135 0082 CFE7     		b	.L24
+ 136              	.L8:
+ 137 0084 084A     		ldr	r2, .L25
+ 138 0086 1168     		ldr	r1, [r2]
+ 139 0088 8143     		bics	r1, r0
+ 140 008a F2E7     		b	.L19
+ 141              	.L23:
+ 142 008c 064B     		ldr	r3, .L25
+ 143 008e DA68     		ldr	r2, [r3, #12]
+ 144 0090 8243     		bics	r2, r0
+ 145 0092 DA60     		str	r2, [r3, #12]
+ 146 0094 9A68     		ldr	r2, [r3, #8]
+ 147 0096 1043     		orrs	r0, r2
+ 148 0098 9860     		str	r0, [r3, #8]
+ 149 009a 0800     		movs	r0, r1
+ 150 009c C9E7     		b	.L5
+ 151              	.L12:
+ 152 009e 024B     		ldr	r3, .L25
+ 153 00a0 9A68     		ldr	r2, [r3, #8]
+ 154 00a2 0243     		orrs	r2, r0
+ 155 00a4 D3E7     		b	.L20
+ 156              	.L26:
+ 157 00a6 C046     		.align	2
+ 158              	.L25:
+ 159 00a8 00040140 		.word	1073808384
+ 161              		.section	.text.LL_EXTI_StructInit,"ax",%progbits
+ 162              		.align	1
+ 163              		.p2align 2,,3
+ 164              		.global	LL_EXTI_StructInit
+ 165              		.syntax unified
+ 166              		.code	16
+ 167              		.thumb_func
+ 169              	LL_EXTI_StructInit:
+ 170              		@ args = 0, pretend = 0, frame = 0
+ 171              		@ frame_needed = 0, uses_anonymous_args = 0
+ 172              		@ link register save eliminated.
+ 173 0000 0023     		movs	r3, #0
+ 174              		@ sp needed
+ 175 0002 0360     		str	r3, [r0]
+ 176 0004 8380     		strh	r3, [r0, #4]
+ARM GAS  /tmp/cc5AuP9k.s 			page 4
+
+
+ 177 0006 0233     		adds	r3, r3, #2
+ 178 0008 8371     		strb	r3, [r0, #6]
+ 179 000a 7047     		bx	lr
+ 181              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/cc5AuP9k.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f0xx_ll_exti.c
+     /tmp/cc5AuP9k.s:16     .text.LL_EXTI_DeInit:0000000000000000 $t
+     /tmp/cc5AuP9k.s:23     .text.LL_EXTI_DeInit:0000000000000000 LL_EXTI_DeInit
+     /tmp/cc5AuP9k.s:43     .text.LL_EXTI_DeInit:0000000000000018 $d
+     /tmp/cc5AuP9k.s:48     .text.LL_EXTI_Init:0000000000000000 $t
+     /tmp/cc5AuP9k.s:55     .text.LL_EXTI_Init:0000000000000000 LL_EXTI_Init
+     /tmp/cc5AuP9k.s:159    .text.LL_EXTI_Init:00000000000000a8 $d
+     /tmp/cc5AuP9k.s:162    .text.LL_EXTI_StructInit:0000000000000000 $t
+     /tmp/cc5AuP9k.s:169    .text.LL_EXTI_StructInit:0000000000000000 LL_EXTI_StructInit
+
+NO UNDEFINED SYMBOLS

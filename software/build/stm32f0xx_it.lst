@@ -1,0 +1,105 @@
+ARM GAS  /tmp/ccftWNAQ.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32f0xx_it.c"
+  14              		.text
+  15              		.section	.text.NMI_Handler,"ax",%progbits
+  16              		.align	1
+  17              		.p2align 2,,3
+  18              		.global	NMI_Handler
+  19              		.syntax unified
+  20              		.code	16
+  21              		.thumb_func
+  23              	NMI_Handler:
+  24              		@ Volatile: function does not return.
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28              	.L2:
+  29 0000 FEE7     		b	.L2
+  31 0002 C046     		.section	.text.HardFault_Handler,"ax",%progbits
+  32              		.align	1
+  33              		.p2align 2,,3
+  34              		.global	HardFault_Handler
+  35              		.syntax unified
+  36              		.code	16
+  37              		.thumb_func
+  39              	HardFault_Handler:
+  40              		@ Volatile: function does not return.
+  41              		@ args = 0, pretend = 0, frame = 0
+  42              		@ frame_needed = 0, uses_anonymous_args = 0
+  43              		@ link register save eliminated.
+  44              	.L5:
+  45 0000 FEE7     		b	.L5
+  47 0002 C046     		.section	.text.SVC_Handler,"ax",%progbits
+  48              		.align	1
+  49              		.p2align 2,,3
+  50              		.global	SVC_Handler
+  51              		.syntax unified
+  52              		.code	16
+  53              		.thumb_func
+  55              	SVC_Handler:
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58              		@ link register save eliminated.
+  59              		@ sp needed
+  60 0000 7047     		bx	lr
+  62 0002 C046     		.section	.text.PendSV_Handler,"ax",%progbits
+  63              		.align	1
+ARM GAS  /tmp/ccftWNAQ.s 			page 2
+
+
+  64              		.p2align 2,,3
+  65              		.global	PendSV_Handler
+  66              		.syntax unified
+  67              		.code	16
+  68              		.thumb_func
+  70              	PendSV_Handler:
+  71              		@ args = 0, pretend = 0, frame = 0
+  72              		@ frame_needed = 0, uses_anonymous_args = 0
+  73              		@ link register save eliminated.
+  74              		@ sp needed
+  75 0000 7047     		bx	lr
+  77 0002 C046     		.section	.text.SysTick_Handler,"ax",%progbits
+  78              		.align	1
+  79              		.p2align 2,,3
+  80              		.global	SysTick_Handler
+  81              		.syntax unified
+  82              		.code	16
+  83              		.thumb_func
+  85              	SysTick_Handler:
+  86              		@ args = 0, pretend = 0, frame = 0
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88              		@ link register save eliminated.
+  89              		@ sp needed
+  90 0000 7047     		bx	lr
+  92 0002 C046     		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  /tmp/ccftWNAQ.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f0xx_it.c
+     /tmp/ccftWNAQ.s:16     .text.NMI_Handler:0000000000000000 $t
+     /tmp/ccftWNAQ.s:23     .text.NMI_Handler:0000000000000000 NMI_Handler
+     /tmp/ccftWNAQ.s:32     .text.HardFault_Handler:0000000000000000 $t
+     /tmp/ccftWNAQ.s:39     .text.HardFault_Handler:0000000000000000 HardFault_Handler
+     /tmp/ccftWNAQ.s:48     .text.SVC_Handler:0000000000000000 $t
+     /tmp/ccftWNAQ.s:55     .text.SVC_Handler:0000000000000000 SVC_Handler
+     /tmp/ccftWNAQ.s:63     .text.PendSV_Handler:0000000000000000 $t
+     /tmp/ccftWNAQ.s:70     .text.PendSV_Handler:0000000000000000 PendSV_Handler
+     /tmp/ccftWNAQ.s:78     .text.SysTick_Handler:0000000000000000 $t
+     /tmp/ccftWNAQ.s:85     .text.SysTick_Handler:0000000000000000 SysTick_Handler
+
+NO UNDEFINED SYMBOLS
